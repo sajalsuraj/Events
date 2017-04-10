@@ -1,0 +1,36 @@
+#assignment-form{
+	display: block;
+}
+#assignment-form input[type="text"]{
+	padding-left: 20px;
+	margin-bottom: 15px;
+	border-radius: 5px;
+	border:1px solid #59A9C2;
+	height: 30px;
+	width: 105%;
+
+}
+#assignment-form textarea{
+	width: 105%;
+	padding-left: 20px;
+	margin-left: 0px;
+	margin-top: 10px;
+	border-radius: 5px;
+	border:1px solid #59A9C2;
+	height:100%;
+}
+#assignment-form button{
+	border-radius: 3px;
+	background-color: #034e63;
+	color: #fff;
+	border: #034e63 solid 1px;
+    box-shadow: 2px 5px 4px -3px rgba(40, 40, 40, 0.6);
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-left: 88%;
+}
+.edit-section h5 a{
+	text-decoration: none;
+	color:#2C6597;
+	font-size: 15px;
+}

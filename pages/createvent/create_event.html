@@ -1,0 +1,268 @@
+<div class="row">
+    <div class="col-md-12" style="padding-right:0px; margin-bottom:0px; text-align:center; margin-top:3px;">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="margin-bottom:2px;">
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne" style="padding:0px 0px 0px 0px; ">
+                <div class="well well-sm"  style="background-color:#DDDDDD; margin:0px 0px 0px 0px; border-radius:0px 0px 0px 0px;">
+                    <h4 style="font-weight:800; color:#444;">
+                        <a role="button" data-toggle="collapse" style="font-weight:800; color:#555;" data-parent="#accordion" href="#/create#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          &nbsp;Create an event
+                        </a>
+                    </h4>
+                </div> 
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body" style="">
+                <div class="col-md-offset-5 col-md-7" style="padding-left:45px;">
+                    <div class="image_box_2">
+                    </div>
+                </div>
+                <div class="col-md-offset-3 col-md-6" style="text-align:left; color:#666;">
+                    <form ng-submit="saveForm(form)">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1" class="col-md-12 control-label">Event name</label>
+                        <div class="col-md-12">
+                            <input ng-model="form.title" type="text" class="form-control" id="exampleInputEmail1" placeholder="">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputEmail3" class="col-md-12 control-label" style="margin-top:10px;">Select Start Date</label>
+                        
+                        <div class="col-md-3">
+                            <select ng-model="startYear" class="form-control">
+                                <option>Year</option>
+                                <option value="2014">2014</option>
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3" style="padding-left:0px;">
+                            <select ng-model="startMonth" class="form-control">
+                                <option>Month</option>
+                                <option value="01">January</option>
+                                <option value="02">February</option>
+                                <option value="03">March</option>
+                                <option value="04">April</option>
+                                <option value="05">May</option>
+                                <option value="06">June</option>
+                                <option value="07">July</option>
+                                <option value="08">August</option>
+                                <option value="09">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3" style="padding-left:0px;">
+                            <select ng-model="startDate" class="form-control">
+                                <option>Date</option>
+                                <option value="01">1</option>
+                                <option value="02">2</option>
+                                <option value="03">3</option>
+                                <option value="04">4</option>
+                            </select>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="inputEmail3" class="col-md-12 control-label" style="margin-top:10px;">Select End Date</label>
+                        <div class="col-md-3">
+                            <select ng-model="endYear" class="form-control">
+                                <option>Year</option>
+                                <option value="2014">2014</option>
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3" style="padding-left:0px;">
+                            <select ng-model="endMonth" class="form-control">
+                                <option>Month</option>
+                                <option value="01">January</option>
+                                <option value="02">February</option>
+                                <option value="03">March</option>
+                                <option value="04">April</option>
+                                <option value="05">May</option>
+                                <option value="06">June</option>
+                                <option value="07">July</option>
+                                <option value="08">August</option>
+                                <option value="09">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3" style="padding-left:0px;">
+                            <select ng-model="endDate" class="form-control">
+                                <option>Date</option>
+                                <option value="01">1</option>
+                                <option value="02">2</option>
+                                <option value="03">3</option>
+                                <option value="04">4</option>
+                            </select>
+                        </div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="inputEmail3" class="col-md-12 control-label" style="margin-top:10px;">Type of event</label>
+                        <div class="col-md-3">
+                            <select ng-model="form.online" class="form-control">
+                                <option ng-selected="true" value="1">Online</option>
+                                <option value="0">Offline</option>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label  for="exampleInputEmail1" class="col-md-12 control-label" style="margin-top:10px;">Location: </label>
+                        <div class="col-md-12">
+                            <input ng-model="form.venue" type="text" class="form-control" placeholder="">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label  for="exampleInputEmail1" class="col-md-12 control-label" style="margin-top:10px;">Enter Pin</label>
+                        <div class="col-md-3">
+                            <input ng-model="form.pincode" type="text" class="form-control" placeholder="">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputEmail3" class="col-md-12 control-label" style="margin-top:10px;">Is it free? if not Enter amount</label>
+                        <div class="col-md-3">
+                            <input ng-model="form.fees" type="text" class="form-control" value="0" placeholder="">
+                        </div>
+                        <div class="col-md-3" style="padding-left:0px;">
+                            <label class="radio-inline" style="color:#777; font-weight:600; padding-top:5px;">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" ng-model="form.type" value="Free"> Free
+                            </label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputEmail3" class="col-md-12 control-label" style="margin-top:10px;">Select audiece</label>
+                        <div class="col-md-3">
+                            <label class="radio-inline" style="color:#777; font-weight:600; padding-top:5px;">
+                              <input type="radio" name="inlineRadioOptions" value="option1"> All
+                            </label>
+                        </div>
+                        <div class="col-md-3" style="padding-left:0px;">
+                            <label class="radio-inline" style="color:#777; font-weight:600; padding-top:5px;">
+                              <input type="radio" name="inlineRadioOptions"  value="option1"> Colleagues
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="radio-inline" style="color:#777; font-weight:600; padding-top:5px;">
+                              <input type="radio" name="inlineRadioOptions" value="option1"> Group
+                            </label>
+                        </div>
+                        <div class="col-md-3" style="padding-left:0px;">
+                            <label class="radio-inline" style="color:#777; font-weight:600; padding-top:5px;">
+                              <input type="radio" name="inlineRadioOptions" value="option1"> Similar Skill
+                            </label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label  for="exampleInputEmail1" class="col-md-12 control-label" style="margin-top:10px;"></label>
+                        <div class="col-md-12">
+                            <textarea ng-model="form.description" class="form-control" rows="3"></textarea>
+                        </div>
+                      </div>
+                      <div class="form-group image-upload">
+                        <label for="file-input" class="col-md-12 control-label" style="margin-top:10px;">Add attachments &nbsp;
+                        <div class="form-control" ngf-select ng-model="form.related_file" name="file" ngf-pattern="'image/*'"
+                                ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100">Select</div>
+                        <!-- <span class="glyphicon glyphicon-paperclip" style="font-size:16px; padding-top:0px; color:rgba(89,169,194,1.00); cursor:pointer;"></span></label>
+                        <input id="file-input" fileread="form.related_file" type="file"/> -->
+                      </div>
+                      <div class="form-group">
+                          <div class="col-md-12">
+                            <button type="submit" class="btn btn-default btn-block" style="background-color:rgba(89,169,194,1.00); color:#fff;">Submit event</button>
+                          </div>
+                      </div>
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-12" style="padding-right:0px; margin-bottom:0px; text-align:center; margin-top:0px;">
+        <div class="well well-sm"  style="background-color:#DDDDDD;">
+            <h4 style="font-weight:800;">My past events</h4>
+        </div>
+    </div>
+    <div class="col-md-12" style="padding-left:10px; padding-right:0px; padding-top:-10px; margin-top:-10px; padding-bottom:10px; border-bottom:#DFDFDF 1px solid;">
+        <form class="form-inline col-md-8">
+          <div class="form-group">
+            <div class="col-md-2 col-xs-3">
+                <select class="form-control">
+                    <option>Month</option>
+                    <option value="0">January</option>
+                    <option value="1">February</option>
+                    <option value="2">March</option>
+                    <option value="3">April</option>
+                    <option value="4">May</option>
+                    <option value="5">June</option>
+                    <option value="6">July</option>
+                    <option value="7">August</option>
+                    <option value="8">September</option>
+                    <option value="9">October</option>
+                    <option value="10">November</option>
+                    <option value="11">December</option>
+                </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-2 col-xs-3" style="padding-left:0px;">
+                <select class="form-control">
+                    <option>Year</option>
+                    <option value="0">2014</option>
+                    <option value="1">2015</option>
+                    <option value="2">2016</option>
+                    <option value="3">2017</option>
+                </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-2 col-xs-3" style="padding-left:0px;">
+                <select class="form-control">
+                    <option value="0">Online</option>
+                    <option value="1">Offline</option>
+                </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-2 col-xs-3" style="padding-left:0px;">
+                <select class="form-control">
+                    <option value="0">Paid</option>
+                    <option value="1">Free</option>
+                </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-default" style=" padding-left:20px; color:#fff; padding-right:20px;background-color:rgba(89,169,194,1.00);">Filter</button>
+        </form>
+        <form class="form-inline col-md-4" >
+          <div class="form-group">
+            <div class=" col-md-6" style="float:right !important; padding-left:20px;">
+                <input type="text" class="form-control" id="exampleInputName2" placeholder="Search by the keyword">
+            </div>
+          </div>
+        </form>
+    </div>
+    <div class="col-md-12 col-xs-12 neweventholderbox">
+        <div class="col-md-4 neweventholder" ng-repeat="event in events">
+            <div class="col-md-6">
+                <div class="image_box">
+                </div>
+            </div>
+            <div class="col-md-6 padLeft0 pasteventdetail">
+                <h4>{{event.event.title}}</h4>
+                <p>{{event.event.start | amDateFormat:'Do MMM'}}</p>
+                <p>{{ event.event.end | amDifference : event.event.start : 'days' }} days</p>
+                <p>{{event.event.venue}}</p>
+                <p>{{event.event.type}}</p>
+                <a>See more details...</a>
+            </div>
+        </div>
+    </div>
+</div>

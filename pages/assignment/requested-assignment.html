@@ -1,0 +1,107 @@
+<div class="row job_header_box">        
+    <div class="col-md-6">
+        <div class="col-md-1 col-xs-2" style="text-align:right;padding-top:35px; padding-right:40px;">
+             <img src="images/opportunities-white.png"/>
+        </div>
+        <div style="text-align:left;">
+            <h2 style="color:#fff; font-weight:700; padding-top:14px; padding-bottom:10px;">Requested Assignment</h2>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12" style="padding-right:0px; text-align:left; margin-top:3px;">
+        <div class="well well-sm"  style="background-color:#DDDDDD;">
+            <h4 style="font-weight:800; margin-left: 10px;">Assignment Requests</h4>
+        </div>
+    </div>
+    <div class="col-md-12" style="padding-right:0px;background-color: #FCFCFC; border-bottom: 1px solid #dfdfdf;padding-bottom: 0px;">
+     
+        <!--all the content should be code hare-->
+        <div class="col-md-12">
+            <div class="col-md-3">
+                <h4 style="font-size: 16px;color: #4d4d4d; font-weight: 500;float: left;">Student Details</h4>
+            </div>
+            <div class="col-md-2">
+                <h4 style="font-size: 16px;color: #4d4d4d; font-weight: 500;float: left;">Title</h4>
+            </div>
+            <div class="col-md-1">
+                <h4 style="font-size: 16px;color: #4d4d4d; font-weight: 500;float: left;">Class</h4>
+            </div>
+            <div class="col-md-2">
+                <h4 style="float: left;font-size: 16px;color: #4d4d4d; font-weight: 500; margin-left:0%;margin-right:0%;"">Created on</h4>
+            </div>
+            <div class="col-md-2">
+                <h4 style="float: left;font-size: 16px;color: #4d4d4d; font-weight: 500; margin-left:0%;margin-right:0%;"">Deadline</h4>
+            </div>
+            <div class="col-md-2">
+                <h4 style="float: left;font-size: 16px;color: #4d4d4d; font-weight: 500; margin-left:0%;margin-right:0%;""></h4>
+            </div>
+        </div>
+        <div ng-repeat = "assign in reqAssignment">
+	        <div class="col-md-12" style="border-top:1px solid #DDDDDD;padding-top:5px ;padding-bottom: 5px;">
+	            <div class="col-md-3" style="padding-left: 5px;padding-right: 0px;">
+	                <a href="#" class="username" style=" font-size:18px; padding-top:0px; text-decoration: none;color: #4d4d4d;">
+	                    <img src="images/people/50/guy-5.jpg" width="30" alt="Bill" class="img-circle" />&nbsp; John Doe
+	                </a>
+	                <ul id="student-details">
+	                    <li>ID- 1002</li>
+	                    <li>Domain- Engineering</li>
+	                    <li>College- IITM</li>
+	                </ul>
+	            </div>
+	            <div class="col-md-2" style="padding-left: 0px;">
+	                <h4 style="font-size: 16px;color: #4d4d4d; font-weight: 400;float: left;">{{assign.title}}</h4>
+	            </div>
+	            <div class="col-md-1">
+	                <h4 style="font-size: 16px;color: #4d4d4d; font-weight: 400;float: left;margin-left: 20%;">2</h4>
+	            </div>
+	            <div class="col-md-2">
+	                <h4 style="font-size: 16px;color: #4d4d4d; font-weight: 400;float: left;margin-right: 25%;">{{assign.posted_date}}</h4>
+	            </div>
+	            <div class="col-md-2">
+	                <h4 style="font-size: 16px;color: #4d4d4d; font-weight: 400;float: left;margin-right: 25%;">{{assign.deadline}}</h4>
+	            </div>
+	            <div class="col-md-2 contribute-link">
+	                <h5><a href="requested-assignment#timing_{{$index}}" data-toggle="collapse">Contribute<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></h5>
+	            </div>
+	        </div>
+	        <div class="col-md-12 contribute-dropdown collapse" id="timing_{{$index}}" style="padding-left: 0px;padding-right: 0px;background-color: #fff;">
+	            <div class="well well-sm"  style="background-color:#fcfcfc;padding-top:5px ;padding-bottom:5px ; padding-left: 0px;padding-right: 0px;margin-bottom: 0px;">
+                    <h4 style="font-weight:800; margin-left: 20px;">Contribute</h4>
+	            </div>
+	                 <div style="padding-bottom: 10px;border-bottom: 1px solid #DDDDDD;background-color: #fff;">
+	                 <h5 style="margin-left: 10px;font-size: 15px;">Title : {{assign.title}}</h5>
+	                 <h5 style="margin-left: 10px;font-size: 15px;">Requirements : Help me to find new interesting questions</h5>
+	                 </div>
+	                 <form ng-submit="contributeAssign()">
+	                 	<div class="form-group">
+	                 		<label>Write Contribution</label>
+	                 		<div class="col-md-12 padLeft0">
+	                 			
+	                 			<div class="col-md-8">
+	                 				<textarea rows="10" ng-model="form.questions" placeholder="Write contribution"></textarea>
+	                 			</div>
+	                 		</div>
+	                 	</div>
+
+	                 	<div class="form-group">
+	                 		<label>Add Attachment</label>
+	                 		<div class="col-md-12">
+	                 			
+	                 			<div class="col-md-2">
+	                 				<div class="cursorpoint fileselector" ngf-select ng-model="form.related_file" name="file" ngf-pattern="'image/*'"
+                                ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100">Choose File</div>
+	                 			</div>
+	                 		</div>
+	                 		
+	                 	</div>
+
+	                 	<div class="form-group">
+	                 		<button style="margin-bottom: 10px;" type="submit" class="mail-button">Contribute</button>
+	                 	</div>
+	                 	
+	                 </form>
+	        </div>
+        </div>  
+    </div>
+</div>

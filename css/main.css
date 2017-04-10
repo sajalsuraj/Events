@@ -1,0 +1,98 @@
+.neweventholderbox{
+	padding-right:0px; padding-bottom:10px;
+}
+.neweventholder{
+	margin-top:15px; padding-left:0px;
+}
+.padLeft0{
+	padding-left:0px;
+}
+.cursorpoint{
+	cursor: pointer;
+}
+.eventdetail h4:first-child{
+	font-weight:800;  font-size:15px;  margin-top:0px; margin-bottom:1px;
+}
+.addCalendar{
+	color:rgba(89,169,194,1.00); font-size:14px; font-weight:700; padding-top:0px; padding-bottom: 0px; margin-top:0px; margin-bottom:0px;
+}
+.eventdetail p{
+	font-size:12px; line-height:15px; font-weight:700; color:rgba(116,116,116,1.00); padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:0px;
+}
+.eventdetail a{
+	font-size:11px; font-weight:600; color:rgba(89,169,194,1.00); padding-top:0px; margin-top:0px; margin-bottom:0px;
+}
+.eventdetail button, .eventdetail button:hover{
+	background-color:rgba(89,169,194,1.00); color:#fff;
+}
+
+.pasteventdetail h4:first-child{
+	font-weight:800;  font-size:17px;  margin-top:0px; margin-bottom:5px;
+}
+.pasteventdetail p{
+	font-size:14px; font-weight:600; color:rgba(116,116,116,1.00); padding-top:0px; margin-top:0px; margin-bottom:0px;
+}
+.pasteventdetail a{
+	font-size:14px; font-weight:600; color:rgba(89,169,194,1.00); padding-top:4px; margin-top:0px; margin-bottom:0px;
+}
+.image-upload > input
+{
+    display: none;
+}
+.mail-button{
+    border-radius: 3px;
+    background-color: #034e63;
+    color: #fff;
+    border: #034e63 solid 1px;
+    box-shadow: 2px 5px 4px -3px rgba(40, 40, 40, 0.6);
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 2%;
+    margin-left: 22%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.fileselector{
+    background-color: rgba(89,169,194,1.00);
+    width: 70%;
+    padding: 4%;
+    color: #fff;
+    border-radius: 2px;
+}
+#assignment-form{
+	display: block;
+}
+#assignment-form input[type="text"]{
+	padding-left: 20px;
+	margin-bottom: 15px;
+	border-radius: 5px;
+	border:1px solid #59A9C2;
+	height: 30px;
+	width: 105%;
+
+}
+#assignment-form textarea{
+	width: 105%;
+	padding-left: 20px;
+	margin-left: 0px;
+	margin-top: 10px;
+	border-radius: 5px;
+	border:1px solid #59A9C2;
+	height:100%;
+}
+#assignment-form button{
+	border-radius: 3px;
+	background-color: #034e63;
+	color: #fff;
+	border: #034e63 solid 1px;
+    box-shadow: 2px 5px 4px -3px rgba(40, 40, 40, 0.6);
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 6%;
+    /*margin-left: 88%;*/
+}
+.edit-section h5 a{
+	text-decoration: none;
+	color:#2C6597;
+	font-size: 15px;
+}

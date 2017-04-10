@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="greynexus">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Event</title>
+    <link href="images/Logo32x32.png" rel="shortcut icon" type="image/x-icon" />
+    
+    <!-- App Styling Bundle -->
+    <link href="css/default.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/sweetalert.css" rel="stylesheet" />
+    <link href="css/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="css/requested-assignment.css" rel="stylesheet" /> 
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/angular-route.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="js/moment-with-locales.js"></script>
+    <script type="text/javascript" src="js/angular-moment.min.js"></script>
+    <script type="text/javascript" src="js/ng-file-upload.min.js"></script>
+    <script type="text/javascript" src="js/sweetalert.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <style>
+        .navbar-default {
+            height:50px;
+            border-bottom:#DFDFDF 1px solid;
+        }
+        .sidebar {
+            background-color:#fff;
+        }
+        #brand {
+            padding-top:px;
+            align-items:center; 
+            height:56px;
+            background-color:#fff;
+            color:#444;
+            border-bottom:#DFDFDF 1px solid;
+            background-color:#fff;
+        }
+        .sidebar #menu {
+            padding-top:5px;
+            border-bottom:#DFDFDF 1px solid;
+            border-right:#DFDFDF 1px solid;
+        }
+        #menu .user {
+            font-size:14px;
+            height:47px;
+            padding-top:-5px;
+            border-bottom:#DFDFDF 1px solid;
+        }
+        #menu .user .username {
+            font-size:18px;
+            font-weight:400;
+        }
+        .sidebar_menu li a img {
+            padding-right:5px;
+        }
+        .sidebar_link {
+            padding-top:0px;
+            height:50px;
+        }
+        .invite {
+            color:#134084;
+        }
+        .news-item {
+            background-color:#fff;
+        }
+        .reset{
+            border-bottom:#DFDFDF 1px solid;
+        }
+        .nav-img img{
+            padding-top:-5px;
+            padding-bottom:0px;
+        }
+        .nav-height {
+            height:50px;
+        }
+        .navbar-fixed-top {
+            overflow-y:hidden;
+            max-height:50px;
+            margin-bottom:0px;
+        }
+        .second_navbar {
+            padding-top:4px;
+            padding-bottom:4px;
+            text-align:center;
+            background-color:#fff;
+            border:#ffe 1px thin;
+            color:#444;
+            
+        }
+        #content .container-fluid {
+            margin-top:-13px;
+        }
+        body {
+            background-color:#FCFCFC;
+        }
+        .nav-pills>li.active>a,.nav-pills>li>a:hover{
+            background-color:rgba(0,89,122,1.00);
+            color:#fff;
+            border-radius:25px 25px 25px 25px;
+        }
+        .nav-pills a {
+            color:#444;
+            font-weight:600;
+        }
+        #menu>ul>li.userli>a:hover {
+            color:#444;
+            background-color:#fff;
+        }
+        .padding_left {
+            margin-left:40px;
+        }
+        .hasSubmenu>ul>li>a{
+            color:#444;
+            background-color:rgba(249,249,249,1.00);
+        }
+        .hasSubmenu>ul>li>a:hover{
+            color:#fff;
+            background-color:rgba(0,89,122,1.00);
+        }
+        .hasSubmenu>a:hover{
+            color:#fff;
+            background-color:rgba(0,89,122,1.00);
+        }
+        .normal_sidebar_link>ul>li>a{
+            color:#444;
+            background-color:rgba(249,249,249,1.00);
+        }
+        .normal_sidebar_link>ul>li>a:hover{
+            color:#fff;
+            background-color:rgba(0,89,122,1.00);
+        }
+        .normal_sidebar_link>a:hover{
+            color:#fff;
+            background-color:rgba(0,89,122,1.00);
+        }
+        .job_header_box {
+            background-color:rgba(89,169,194,1.00);
+            font-weight:700;
+            color:#fff;
+            height:97px;
+        }
+        .table th, .table td { 
+             border-top: none !important; 
+         }
+         li.reset>ul>li>p {
+             padding-left:20px;
+             color:#444;
+             font-weight:600;
+             background-color:rgba(249,249,249,1.00);
+         }
+        input.form-control, select.form-control{
+            background-color:#fff;
+        }
+        ::-webkit-input-placeholder { /* WebKit browsers */
+            color: #444;
+        }
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: #444;
+        }
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: #444;
+        }
+        :-ms-input-placeholder { /* Internet Explorer 10+ */
+            color: #444;
+        }
+        input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+            color: #444;
+        }
+        input:-moz-placeholder, textarea:-moz-placeholder {
+            color: #444;
+        }
+        .form-control {
+          border-radius:5px 5px 5px 5px;
+          border-color:#DFDFDF;
+        }
+        .image_box {
+            height:140px;
+            width:150px;
+            background-color:rgba(229,229,229,1.00);
+            border-radius:5px 5px 5px 5px;
+            border:#dfdfdf 1px thin;
+        }
+        .image_box_2 {
+            height:100px;
+            width:100px;
+            background-color:rgba(229,229,229,1.00);
+            border-radius:5px 5px 5px 5px;
+            border:#dfdfdf 1px thin;
+        }
+    </style>
+</head>
+<body ng-controller="mainController">
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-main navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid nav-height">
+            <a href="#" data-toggle="sidebar-menu" id="toggle-sidebar-menu" class="visible-xs"><i class="fa fa-bars fa-2x"></i></a>
+            <ul class="nav navbar-nav hidden-xs">
+
+                <!-- Notifications -->
+                <li class="dropdown notifications">
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-img" >
+                    <a class="nav-img" href="#">
+                        <img src="images/search-grey.png" alt="user"/>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#" data-toggle="">
+                        <img src="images/request-blue.png" alt="user"/>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#" data-toggle="">
+                        <img src="images/message-blue.png" alt="user"/>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#" data-toggle="">
+                        <img src="images/notification-blue.png" alt="user"/>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="sidebar left hidden-xs">
+        <a id="brand" href=""><img src="images/Logo.png" alt="logo"/></a>
+        <div id="menu" data-scrollable>
+            <ul class="user">
+                <!-- User -->
+                <li class="userli">
+                    <a href="#" class="username" style=" font-size:18px; padding-top:0px;">
+                        <img src="images/people/50/guy-5.jpg" width="30" alt="Bill" class="img-circle" />&nbsp; John Doe
+                    </a>
+                </li>
+            </ul>
+            <ul class="sidebar_menu">
+                <li class="normal_sidebar_link">
+                    <a href="" class=""><img src="images/home-grey.png" alt="user" /> Home</a>
+                </li>
+                <li class="sidebar_link normal_sidebar_link">
+                    <a href=""><img src="images/network-grey.png" alt="user"/> My Network</a>
+                </li>
+                <li class="hasSubmenu">
+                    <a href="#timeline" data-toggle="collapse"><img src="images/home-grey.png"/> Events</a>
+                    <ul class="collapse " id="timeline">
+                        <li>
+                            <a href=""><i class="fa fa-circle-o"></i> Create an event</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fa fa-circle-o"></i> New events</a>
+                        </li>
+                        <li class="">
+                            <a href=""><i class="fa fa-circle-o"></i> Past applied events</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar_link normal_sidebar_link">
+                    <a href=""><img src="images/repository-grey.png" alt="user"/> Books</a>
+                </li>
+                <li class="sidebar_link normal_sidebar_link">
+                    <a href=""><img src="images/calender-grey.png" alt="user"/> Calender</a>
+                </li>
+                <li class="sidebar_link normal_sidebar_link">
+                    <a href=""><img src="images/opportunities-grey.png" alt="user"/> Respository</a>
+                </li>
+                <!-- Sample 2 Level Collapse -->
+                <li class="category border top invite" style="color:rgba(89,169,194,1.00);">INVITE</li>
+                <li class="reset" style="margin-left:10px;">
+                    <ul>
+                        <li class="news-item">
+                            <span class="pull-left media-object">
+                            <i class="fa fa-facebook-square"></i>
+                            </span>
+                            <div class="media-body" style="padding-left:0px;">
+                                <a href="" class=""> &nbsp; Invite on Facebook</a>
+                            </div>
+                        </li>
+                        <li class="news-item">
+                            <span class="pull-left media-object">
+                            <i class="fa  fa-linkedin-square"></i>
+                            </span>
+                            <div class="media-body" style="padding-left:0px;">
+                                <a href="" class="">&nbsp; Invite on LinkdeIn</a>
+                            </div>
+                        </li>
+                        <li class="news-item">
+                            <span class="pull-left media-object">
+                            <i class="fa  fa-envelope"></i>
+                            </span>
+                            <div class="media-body" style="padding-left:0px;">
+                                <a href="" class="">&nbsp; Send Invite</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="category" style="color:rgba(89,169,194,1.00);">Contact Us</li>
+                <li class="reset" style="margin-left:10px;">
+                    <ul>
+                        <li class="news-item" style=" margin-bottom:0px; padding-bottom:0px;">
+                            <span class="pull-left media-object">
+                            <i class="fa fa-phone"></i>
+                            </span>
+                            <div class="media-body" style="padding-left:0px;">
+                                <p> &nbsp; +91 9111111111</p>
+                            </div>
+                        </li>
+                        <li class="news-item" style=" margin-top:0px; padding-top:0px;">
+                            <span class="pull-left media-object">
+                            <i class="fa fa-envelope"></i>
+                            </span>
+                            <div class="media-body" style="padding-left:0px;">
+                                <p> &nbsp; anuj@gmail.com</p>
+                            </div>
+                        </li>
+                        <!--<li><p> +91 9111111111</p>
+                        </li>
+                        <li><p> anuj@gmail.com</p>
+                        </li>-->
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="content">
+        <div class="container-fluid" style="margin-left:0px; padding-left:0px; padding-left:0px; margin-right:0px; margin-bottom:0px; border-bottom:#DFDFDF 1px solid;">
+            <div class="col-md-12 col-xs-12">
+                <div class="row second_navbar">
+                    <div class="col-md-12 col-xs-12">
+                        <ul class="nav nav-pills">
+                          <li role="presentation" class="col-md-2"><a href="#">Home</a></li>
+                          <li role="presentation" class="col-md-2" style="margin-left:43px;"><a href="#">Profile</a></li>
+                          <li role="presentation" class="col-md-2" style="margin-left:43px;"><a href="#">Network</a></li>
+                          <li role="presentation" class="active col-md-2" style="margin-left:43px;"><a href="#">Opportunities</a></li>
+                          <li role="presentation" class="col-md-2" style="margin-left:43px;"><a href="#">Create+</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="padding-left:0px; margin-top:0px; margin-right:0px;">
+
+            <!-- angular templating -->
+            <!-- this is where content will be injected -->
+            <div ng-view></div>
+        </div>
+    </div>
+
+
+    
+    <!-- Vendor Scripts Bundle -->
+    <script src="js/vendor.min.js"></script>
+    
+
+    <!-- App Scripts Bundle -->
+    <script src="js/scripts.min.js"></script>
+</body>
+</html>

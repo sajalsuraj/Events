@@ -1,0 +1,132 @@
+<div class="row job_header_box">
+    <div class="col-md-6">
+        <div class="col-md-1 col-xs-2" style="text-align:right;padding-top:35px; padding-right:40px;">
+             <img src="images/opportunities-white.png"/>
+        </div>
+        <div style="text-align:left;">
+            <h2 style="color:#fff; font-weight:700; padding-top:14px; padding-bottom:10px;"> Create assignment</h2>
+        </div>
+    </div>     
+</div>
+<div class="row">
+    <div class="col-md-12" style="padding-right:0px; text-align:left; margin-top:3px;">  
+        <div class="well well-sm"  style="background-color:#DDDDDD;">
+            <h4 style="font-weight:800; margin-left: 10px;">Group Assignment</h4>
+        </div>
+    </div>
+    <div class="col-md-12" style="padding-right:0px;background-color: #FCFCFC; border-bottom: 1px solid #dfdfdf;padding-bottom: 25px;">
+        <!--all the content should be code hare-->
+        <div class="col-md-6">
+            <form id="assignment-form" ng-submit="saveAssignment(form)">
+                <div class="form-group">
+                    <label>Title</label>
+                    <div class="col-md-12 padLeft0">
+                        <div class="col-md-6 padLeft0">
+                            <input type="text" ng-model="form.title" placeholder="Title">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>
+                        Level
+                        <select class="form-control" ng-model="form.difficulty">
+                            <option>Easy</option>
+                            <option>Intermediate</option>
+                            <option>Difficult</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        Deadline Date<input ng-model="form.deadline" id="datepicker" type="text">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>Pincode</label>
+                    <div class="col-md-12 padLeft0">
+                        <div class="col-md-6 padLeft0">
+                            <input type="text" ng-model="form.pincode" placeholder="Enter pincode">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>
+                        Add topics
+                    </label>
+                    <div class="col-md-12 padLeft0" ng-repeat="topic in topics">
+                        <div id="{{topic.id}}" class="col-md-6 padLeft0">
+                            <input ng-model="topic.topicName" type="text" name="" placeholder="Name of the topic">
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" ng-model="topic.totalQuestions" type="number" name="" placeholder="No. of questions">
+                        </div>
+                    </div>
+                    <div class="col-md-12 padLeft0">
+                        <span class="cursorpoint" ng-click="addTopic()"><i class="glyphicon glyphicon-plus"></i> Add More topics</span>
+                        <br>
+                    </div>     
+                </div>
+                <div class="form-group">
+                    <button type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12" style="padding-right:0px; text-align:left; margin-top:3px;">
+        <div class="well well-sm"  style="background-color:#DDDDDD;margin-bottom: 0px;">
+            <h4 style="font-weight:800; margin-left: 10px;">Previous posted assignments</h4>
+        </div>
+    </div>
+    <div class="col-md-12">
+                <div class="col-md-12" style="background-color: #fff;padding-top: 10px;padding-bottom: 10px;padding-right: 10px;width: 102%;">
+                    <div class="col-md-3">
+                        <h4 style="font-size: 16px;color: #4d4d4d; font-weight: 500;float: left;">Title</h4>
+                        <h4 style="font-size: 16px;color: #4d4d4d; font-weight: 500; margin-left: 92%;">Level</h4>
+
+                    </div>
+                    <div class="col-md-9">
+                        <h4 style="float: left;font-size: 16px;color: #4d4d4d; font-weight: 500; margin-left:12%;margin-right:12%;"">Created on</h4>
+                        <h4 style="font-size: 16px;color: #4d4d4d; font-weight: 500;">Deadline</h4>
+                    </div>
+                </div>
+    </div>
+    <div class="col-md-12 main-section">
+        <div class="col-md-12" style="border: 1px solid #DDDDDD;padding-right: 0px;padding-bottom: 5px;padding-top: 5px; margin-left: 9px;margin-right: 1px;width: 100%;border-top-left-radius: 3px;border-top-right-radius: 3px;background-color: #DDDDDD;">
+            <div class="col-md-4">
+                 <h4 style="font-size: 16px;color: #4d4d4d; font-weight: 400;float: left;">Maths Assignment</h4>
+                 <h4 style="font-size: 16px;color: #4d4d4d; font-weight: 400;margin-left: 68%;">20</h4>
+
+            </div>
+            <div class="col-md-4">
+                <h4 style="font-size: 16px;color: #4d4d4d; font-weight: 400;float: left;margin-right: 25%;">01-01-2017</h4>
+                <h4 style="font-size: 16px;color: #4d4d4d; font-weight: 400;">01-01-2017</h4>
+            </div>
+            <div class="col-md-4 edit-section">
+                <h5 style="float: left;margin-right: 40%;"><a href="#time-being" data-toggle="collapse">Edit<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></h5>
+                <h5><a href="responses.html">Responses</a><h5>
+            </div>
+        </div>
+        <div class="collapse " id="time-being">
+            <div class="col-md-12" style="padding-right:0px; text-align:left;width: 101%;padding-left: 9px;">
+                <div class="well well-sm"  style="background-color:#FCFCFC;padding-top:5px ;padding-bottom:5px ;">
+                     <h4 style="font-weight:800; margin-left: 20px;">Edit Assignment</h4>
+                 </div>
+            </div>
+
+                <div class="col-md-6">
+                    <form id="assignment-form" method="post" action="">
+                    <input type="text" name="title" placeholder="Title">
+                    <input type="text" name="summary" placeholder="Summary">
+                    <input type="text" name="summary" placeholder="Level">
+                    <input type="text" name="summary" placeholder="Deadline-Date">
+                    <textarea rows="10" placeholder="Write assignment"></textarea>
+                    <h4 style="color: #4d4d4d;font-size: 17px;font-weight: 700;">Request for contribution:</h4>
+                    <input type="text" name="people" placeholder="Request people for group assignment">
+                    <button style="margin-bottom: 18px;">Save</button>
+                    </form>
+                </div>
+        </div>
+    </div>
+</div>
